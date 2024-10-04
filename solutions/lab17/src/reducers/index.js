@@ -5,7 +5,6 @@ export function cart(state = { items: [] }, action = {}) {
         ...state,
         items: [...state.items, action.payload.product],
       };
-
     case 'CART_REMOVE':
       return {
         ...state,
