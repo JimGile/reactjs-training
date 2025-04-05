@@ -1,4 +1,5 @@
 import Book from "./Book";
+import styles from "./CartItem.module.css";
 
 interface CartItemProps {
   item: Book;
@@ -9,10 +10,13 @@ function CartItem(props: CartItemProps) {
   const { id, title, price } = props.item;
 
   return (
-    <p>
-      <button onClick={() => props.removeFromCart(id)}>Remove</button> {title}:
-      ${price}
-    </p>
+    <div className={styles.cartRow}>
+      <div className={styles.cartItemCol}>
+        <button onClick={() => props.removeFromCart(id)}>Remove</button>{" "}
+      </div>
+      <div className={styles.cartItemCol}>{title}:</div>
+      <div className={styles.cartItemColAmt}>${price}</div>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import CartItem from "./CartItem.tsx";
 import Book from "./Book";
+import styles from "./CartItem.module.css";
 
 interface CartProps {
   itemsInCart: Book[];
@@ -16,16 +17,18 @@ function Cart(props: CartProps) {
   return (
     <div>
       <h2>Cart</h2>
-      <div className="row">
-        {props.itemsInCart.map((item) => (
-          <CartItem
-            key={item.id}
-            item={item}
-            removeFromCart={props.removeFromCart}
-          />
-        ))}
+      {props.itemsInCart.map((item) => (
+        <CartItem
+          key={item.id}
+          item={item}
+          removeFromCart={props.removeFromCart}
+        />
+      ))}
+      <div className={styles.cartRow}>
+        <div className={styles.cartItemCol}></div>
+        <div className={styles.cartItemCol}>Total:</div>
+        <div className={styles.cartItemColAmt}>${totalAmt}</div>
       </div>
-      <p>Total: $ {totalAmt} USD</p>
       <div>
         <button onClick={() => props.submitCart(props.itemsInCart)}>
           Check Out

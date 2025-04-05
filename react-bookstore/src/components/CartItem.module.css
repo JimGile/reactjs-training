@@ -1,0 +1,20 @@
+.cartRow {
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.cartItemCol {
+  width: 32%;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.cartItemColAmt {
+  width: 32%;
+  justify-content: right;
+  text-align: right;
+  align-self: center;
+}
